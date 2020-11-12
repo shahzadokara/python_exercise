@@ -5,7 +5,7 @@
     "colab": {
       "name": "Untitled1.ipynb",
       "provenance": [],
-      "authorship_tag": "ABX9TyPiz9Kz/3N4sB9bLABCWYem",
+      "authorship_tag": "ABX9TyMkky8un9D3dmlVEWWVPMS4",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -43,7 +43,7 @@
         "\n",
         "\n"
       ],
-      "execution_count": 1,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -56,6 +56,147 @@
             "\n"
           ],
           "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zRADajcEsuNC",
+        "outputId": "28dd5307-e3b1-4c36-8a6c-079676184556",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 373
+        }
+      },
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "d = {\"First\" : pd.Series([12,23,34,45,5,6,67], index=[\"Chair\", \"Table\", \"Computer\", \"Book\", \"Monitor\", \"Home\", \"Jaguar\"]),\n",
+        "     \"Second\": pd.Series([23,45,34,23], index=[\"Table\", \"Tree\", \"Home\", \"Chair\"]),\n",
+        "     \"Third\" : pd.Series([23,45,12,34,32,12], index=[\"Book\", \"Chair\", \"Jaguar\", \"Name\", \"Okara\", \"Pakistan\"])}\n",
+        "df= pd.DataFrame(d)\n",
+        "df"
+      ],
+      "execution_count": 55,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>First</th>\n",
+              "      <th>Second</th>\n",
+              "      <th>Third</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Book</th>\n",
+              "      <td>45.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>23.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Chair</th>\n",
+              "      <td>12.0</td>\n",
+              "      <td>23.0</td>\n",
+              "      <td>45.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Computer</th>\n",
+              "      <td>34.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Home</th>\n",
+              "      <td>6.0</td>\n",
+              "      <td>34.0</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Jaguar</th>\n",
+              "      <td>67.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>12.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Monitor</th>\n",
+              "      <td>5.0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Name</th>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>34.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Okara</th>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>32.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Pakistan</th>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>12.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Table</th>\n",
+              "      <td>23.0</td>\n",
+              "      <td>23.0</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Tree</th>\n",
+              "      <td>NaN</td>\n",
+              "      <td>45.0</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "          First  Second  Third\n",
+              "Book       45.0     NaN   23.0\n",
+              "Chair      12.0    23.0   45.0\n",
+              "Computer   34.0     NaN    NaN\n",
+              "Home        6.0    34.0    NaN\n",
+              "Jaguar     67.0     NaN   12.0\n",
+              "Monitor     5.0     NaN    NaN\n",
+              "Name        NaN     NaN   34.0\n",
+              "Okara       NaN     NaN   32.0\n",
+              "Pakistan    NaN     NaN   12.0\n",
+              "Table      23.0    23.0    NaN\n",
+              "Tree        NaN    45.0    NaN"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 55
         }
       ]
     }
